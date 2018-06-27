@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "version": "4.0.6.485",
+  "name": "RingCentral for Google",
+  "description": "RingCentral for Google",
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "background",
+    "notifications",
+    "tabCapture",
+    "http://*/",
+    "https://*/",
+    "storage",
+    "identity"
+  ],
+  "oauth2": {
+    "client_id": "420036030335-fueai0i5mpo6lrfqlekj1p1t0jbj78qq.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.google.com/m8/feeds/",
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/calendar",
+      "https://www.googleapis.com/auth/plus.profile.emails.read",
+      "https://www.googleapis.com/auth/admin.directory.user.readonly"
+    ]
+  },
+  "browser_action": {},
+  "icons": {
+    "16": "rc16.png",
+    "32": "rc32.png",
+    "48": "rc48.png",
+    "128": "rc128.png"
+  },
+  "web_accessible_resources": [
+    "redirect.html",
+    "client.html"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./content.js"
+      ]
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://*.googleapis.com https://*.google.com https://*.segment.com https://*.mxpnl.com; object-src 'self'",
+  "options_ui": {
+    "page": "options.html"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqZd25Xn9ECOqu2lfR/eWQSz/vfLc30q2sTxy7ttQ+Ap3LZ9ZaARphT4nHmKcrrgqtDA5/UyoksL87sNZXwyfF0+s/k3630SzvVEZ11y/eBz83cQZC9emMiHy4z1pVJfr7Hyd2R7/YTfPj7yhN0okaLBGqmGAClbAIf9ggyREj91Hvv2/JyqSE9Dow3I1Uodqg72ApBdqiZrdZ/akBEGR7xaNb2S+TnlRA0zPd1gGeszoUD/8Gq/LotNyesCs9c1rN3Amiph4do4+AO3ygWrEi84MULsVWjrXk8k0zBL4DhCQ9mwnIl5Kaa4OkmE0M1fxPDa1sTryERKax7gyNK321wIDAQAB"
+}
